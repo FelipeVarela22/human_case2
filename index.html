@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Humand + VASA | Business Case II</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="deck" aria-label="Presentación Humand VASA Case II">
+    <header class="brandbar">
+      <div class="brand-left">
+        <img src="humand-logo.png" alt="Humand" class="logo" />
+        <span>Humand + VASA</span>
+      </div>
+      <div class="brand-right">Business Case II</div>
+    </header>
+
+    <section class="slide active" id="slide-1" data-slide="01">
+      <div class="glass-mark"></div>
+      <div class="slide-content">
+        <p class="eyebrow">4 semanas post lanzamiento</p>
+        <h1>Estado actual</h1>
+        <div class="two-column metrics">
+          <article class="metric-card">
+            <span class="metric-label">Activación</span>
+            <strong>25%</strong>
+            <p>first login</p>
+            <small>Objetivo: +50%</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Recibos</span>
+            <strong>SAP</strong>
+            <p>integración pendiente</p>
+            <small>Cierre de mes próximo</small>
+          </article>
+        </div>
+        <div class="focus-pill">Foco de trabajo: activar usuarios + asegurar recibos</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-2" data-slide="02">
+      <div class="glass-mark"></div>
+      <div class="slide-content">
+        <p class="eyebrow">Mantener el plan principal y resolver el cierre</p>
+        <h1>Recibos de sueldo</h1>
+        <div class="flow-cards">
+          <article class="flow-card primary">
+            <span>01</span>
+            <h2>Plan principal</h2>
+            <p>Integración SAP</p>
+          </article>
+          <article class="flow-card highlight">
+            <span>02</span>
+            <h2>Acción excepcional</h2>
+            <p>Carga manual por Humand para este mes</p>
+          </article>
+          <article class="flow-card">
+            <span>03</span>
+            <h2>Validación previa</h2>
+            <p>Muestra → prueba → carga final</p>
+          </article>
+        </div>
+        <div class="bottom-note">Objetivo: recibos disponibles en tiempo y forma</div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-3" data-slide="03">
+      <div class="glass-mark"></div>
+      <div class="slide-content wide">
+        <p class="eyebrow">Del 25% al +50%</p>
+        <h1>Activación de usuarios</h1>
+        <h3 class="section-subtitle">Dos motores para acelerar el first login</h3>
+        <div class="activation-grid">
+          <article class="activation-card">
+            <div class="icon">▣</div>
+            <h2>Recibos en Humand</h2>
+            <p>Motivo concreto para ingresar</p>
+          </article>
+          <article class="activation-card mundial">
+            <div class="icon">★</div>
+            <h2>VASA alienta desde Humand</h2>
+            <p>Dinámica mundialista + sorteo</p>
+          </article>
+          <article class="activation-card">
+            <div class="icon">⌁</div>
+            <h2>Empuje interno</h2>
+            <p>Líderes, QR y comunicación en planta</p>
+          </article>
+          <article class="activation-card">
+            <div class="icon">↗</div>
+            <h2>Medición</h2>
+            <p>Seguimiento por área, sede o turno</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-4" data-slide="04">
+      <div class="glass-mark"></div>
+      <div class="slide-content wide">
+        <p class="eyebrow">Alinear decisiones y ejecutar el plan</p>
+        <h1>Próximos pasos</h1>
+        <div class="steps">
+          <article class="step">
+            <span>1</span>
+            <div>
+              <h2>Definir responsables</h2>
+              <p>Recibos, comunicación y líderes internos</p>
+            </div>
+          </article>
+          <article class="step">
+            <span>2</span>
+            <div>
+              <h2>Validar carga de recibos</h2>
+              <p>Formato, muestra de prueba y carga excepcional</p>
+            </div>
+          </article>
+          <article class="step">
+            <span>3</span>
+            <div>
+              <h2>Lanzar campaña de activación</h2>
+              <p>Recibos + dinámica mundialista + QR en planta</p>
+            </div>
+          </article>
+          <article class="step">
+            <span>4</span>
+            <div>
+              <h2>Medir y ajustar</h2>
+              <p>Activación por área, sede o turno</p>
+            </div>
+          </article>
+        </div>
+        <div class="goal-box">
+          <span>Objetivo al cierre</span>
+          <strong>Más colaboradores activos · Recibos disponibles en Humand</strong>
+        </div>
+      </div>
+    </section>
+
+    <nav class="controls" aria-label="Controles de presentación">
+      <button class="nav-btn" id="prev" aria-label="Slide anterior">←</button>
+      <div class="dots" aria-hidden="true">
+        <button class="dot active" data-target="0"></button>
+        <button class="dot" data-target="1"></button>
+        <button class="dot" data-target="2"></button>
+        <button class="dot" data-target="3"></button>
+      </div>
+      <button class="nav-btn" id="next" aria-label="Slide siguiente">→</button>
+    </nav>
+  </main>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const dots = [...document.querySelectorAll('.dot')];
+    let current = 0;
+
+    function showSlide(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    }
+
+    document.getElementById('prev').addEventListener('click', () => showSlide(current - 1));
+    document.getElementById('next').addEventListener('click', () => showSlide(current + 1));
+    dots.forEach(dot => dot.addEventListener('click', () => showSlide(Number(dot.dataset.target))));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === ' ') showSlide(current + 1);
+      if (event.key === 'ArrowLeft') showSlide(current - 1);
+    });
+  </script>
+</body>
+</html>
